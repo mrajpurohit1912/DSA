@@ -1,3 +1,4 @@
+# git checkout origin/main -- leetcode.py
 # two sum
 # from typing import List
 
@@ -145,37 +146,98 @@
 # print(sl.isValid(s))
 ###############################################################################
 # 35. Search Insert Position        
-from typing import List
+# from typing import List
 
-class Solution:
-    def searchInsert(self, nums: List[int], target: int) -> int:
-        # for i in range(len(nums)):
-        #     if target == nums[i]:
-        #         return i
-        #     elif nums[i] > target:
-        #         return i
-        #     elif i == len(nums):
-        #         return i
+# class Solution:
+#     def searchInsert(self, nums: List[int], target: int) -> int:
+#         # for i in range(len(nums)):
+#         #     if target == nums[i]:
+#         #         return i
+#         #     elif nums[i] > target:
+#         #         return i
+#         #     elif i == len(nums):
+#         #         return i
 
 
-        l,r = 0,len(nums) - 1
+#         l,r = 0,len(nums) - 1
 
-        while l <= r:
-            mid = l + (r - l) // 2
+#         while l <= r:
+#             mid = l + (r - l) // 2
 
-            if nums[mid] == target:
-                return mid
-            elif nums[mid] < target:
-                return mid + 1
-            else:
-                right = mid - 1
+#             if nums[mid] == target:
+#                 return mid
+#             elif nums[mid] < target:
+#                 return mid + 1
+#             else:
+#                 right = mid - 1
 
-        return l            
+#         return l            
         
 
 
-nums = [1,3,5,6]
-sl = Solution()
-ans = sl.searchInsert(nums,7)
+# nums = [1,3,5,6]
+# sl = Solution()
+# ans = sl.searchInsert(nums,7)
 
-print(ans)
+# print(ans)
+
+########################################################################################
+# 20. Valid Parentheses
+
+# class Solution:
+#     def isValid(self, s: str) -> bool:
+#         my_dict = {'(':')',
+#                    '{':'}',
+#                    '[':']'}
+        
+#         stack = []
+#         # for i in range(len(s)):
+#         #     for key,value in my_dict.items():                    
+#         #         if s[i] == key:
+#         #             val_key = key
+#         #         if 
+                    
+#         # for char in s:
+#         #     if char in my_dict:
+#         #         top_element = stack.pop() if stack else '#'
+#         #         if my_dict[char] != top_element:
+#         #             return False
+                
+#         #     else:
+#         #         stack.append(char)
+
+#         # return not stack
+
+#         # for c in s:
+#         #     if c == '(':
+#         #         stack.append(')')
+#         #     elif c == '{':
+#         #         stack.append('}')
+#         #     elif c == '[':
+#         #         stack.append(']')
+#         #     elif not stack or  stack.pop() != c:
+#         #         return False
+
+#         # return not stack      
+
+#         for i in s:
+#             if i in my_dict:
+#                 if not stack or stack.pop() != my_dict[i]:
+#                     return False
+#             else:
+#                 stack.append(i)
+
+#         return not stack
+
+# s = "()[]{}"  
+# sl = Solution()
+
+# ans  = sl.isValid(s)
+# print(ans)
+# my_dict = {'(':')',
+#                    '{':'}',
+#                    '[':']'}
+
+# for i in range(len(my_dict)):
+#     print(my_dict[i])
+########################################################################################
