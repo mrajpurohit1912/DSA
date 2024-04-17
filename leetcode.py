@@ -241,3 +241,37 @@
 # for i in range(len(my_dict)):
 #     print(my_dict[i])
 ########################################################################################
+#7. Reverse Integer
+# class Solution:
+#     def reverse(self, x: int) -> int:
+#         INT_MIN = -2** 31
+#         INT_MAX = 2** 31 - 1
+#         rev_x = 0
+#         sign = 1 if x >= 0 else -1
+#         x = abs(x)
+
+#         while x!=0:
+#             last_digit = x % 10
+#             rev_x  = rev_x * 10 + last_digit
+#             x //= 10
+
+#         rev_x = rev_x * sign
+#         if rev_x < INT_MIN or rev_x > INT_MAX:
+#             return 0
+#         else:
+#             return rev_x
+# sl = Solution()
+# print(sl.reverse(123))
+# print(sl.reverse(-123))
+# print(sl.reverse(120))
+
+# x = 564
+
+# reversed_x = 0
+# while x != 0:
+#     last_digit = x % 10
+#     reversed_x = reversed_x * 10 + last_digit
+#     x //= 10
+
+# print(reversed_x)
+    
