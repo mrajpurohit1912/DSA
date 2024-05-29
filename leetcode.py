@@ -274,4 +274,163 @@
 #     x //= 10
 
 # print(reversed_x)
-    
+#############################################################################
+# 39. Combination Sum
+# from typing import List
+
+# class Solution:
+#     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+#         if len(candidates) == 0 or target < candidates[0]:
+#             return None
+#         else:
+#             final_tgt = []
+#             tgt = []
+#             for i in candidates:
+#                 if i == target:
+#                     final_tgt.append([i])
+#                 tgt.append(i)
+#                 if sum(tgt) == target:
+#                     final_tgt.append(tgt)
+                    
+
+
+
+# candidates = [2,3,6,7]
+# target = 7
+# sl = Solution()
+# sl.combinationSum(candidates,target)
+##############################################################################
+# 88. Merge Sorted Array
+# from typing import List
+
+# class Solution:
+#     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+#         """
+#         Do not return anything, modify nums1 in-place instead.
+#         """
+#         nums1.extend(nums2)
+#         #nums1 = list(filter(lambda x : x != 0,nums1))
+#         #nums1 = [ i for i in nums1 if i != 0]
+#         print(nums1)
+#         # for i in nums1:
+#         #     if i == 0:
+#         #         nums1.remove(i)
+#         while 0 in nums1:
+#             nums1.remove(0)
+#         print(nums1)
+#         print(sorted(nums1))
+#         print(nums1)
+##############################################################################
+        
+# 67. Add Binary
+
+# class Solution:
+#     def addBinary(self, a: str, b: str) -> str:
+#         result = ''
+#         carry = 0
+
+#         i,j = len(a) - 1,len(b) - 1
+
+#         while i >= 0 or j >= 0:
+#             digit_a = int(a[i]) if i > 0 else 0
+#             dight_b = int(b[j]) if j > 0 else 0
+
+#             curr_sum = digit_a + dight_b + carry
+#             result = str(curr_sum % 2) + result
+#             carry = curr_sum // 2
+
+#             i -= 1
+#             j -= 1
+
+#         if carry:
+#             result = "1" + result
+# sl = Solution()
+# sl.addBinary()
+######################################################################################
+# 2. Add Two Numbers
+
+# class ListNode:
+#     def __init__(self,data) -> None:
+#         self.data = data
+#         self.next = None
+
+
+# class Solution:
+#     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
+#         dummy = ListNode(0)
+#         current = dummy
+#         carry = 0
+
+#         while l1 or l2 or carry:
+#             sum_val = (l1.data if l1 else 0) + (l2.data if l2 else 0) + carry
+#             carry = sum_val // 10
+#             digit = sum % 10
+
+#             current.next=ListNode(digit)
+#             current = current.next
+
+#             if l1:
+#                 l1.next
+#             if l2:
+#                 l2.next
+        
+#         return dummy.next
+# l1 = ListNode(2)
+# l1.next = ListNode(6)
+# l1.next.next = ListNode(4)
+
+
+# l2 = ListNode(6)
+# l2.next = ListNode(6)
+# l2.next.next = ListNode(4)
+
+# # Create solution object
+# solution = Solution()
+
+# # Call the function
+# result = solution.addTwoNumbers(l1, l2)
+
+# # Print the result
+# while result:
+#     print(result.val, end=" ")
+#     result = result.next
+
+######################################################################################
+
+# 88. Merge Sorted Array
+from typing import List
+
+class Solution:
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        """
+        Do not return anything, modify nums1 in-place instead.
+        # """
+        # nums1.extend(nums2)
+        # while 0 in nums1:
+        #     nums1.remove(0)
+        # nums1 = sorted(nums1)
+        
+        # if m > n:
+        #     for i in nums2:
+        #         nums1.append(nums2.remove(i))
+        #         return nums1
+        # else:
+        #     for i in nums1:
+        #         nums2.append(nums1.remove(i))
+        #         return nums2
+
+        while nums1 or nums2:
+            print()
+
+
+            
+
+
+nums1 = [1,2,3,0,0,0]
+m = 6
+nums2 = [2,5,6]
+n = 3
+
+sl = Solution()
+ans = sl.merge(nums1,m,nums2,n)
+print(ans)
