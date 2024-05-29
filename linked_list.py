@@ -62,4 +62,80 @@
 #     l.display_linked_list()
 
 ################################################################################
+class Node:
+    def __init__(self,data) -> None:
+        self.data = data
+        self.next = None
 
+class LinkedList:
+    def __init__(self) -> None:
+        self.head = None
+
+    def insertatbeg(self,val):
+        if self.head:
+            new_node = Node(val)
+            new_node.next = self.head
+            self.head = new_node
+            return
+        else:
+            new_node = Node(val)
+            new_node.next = self.head
+            self.head = new_node
+
+    def insert_at_end(self,val):
+        new_node = Node(val)
+
+        if self.head is None:
+            self.head = new_node
+            return
+        
+        current_node = self.head
+        while current_node.next:
+            current_node = current_node.next
+        
+        current_node.next = new_node
+    
+
+    def insert_at_index(self,val,index_val):
+        count = 0
+        new_node = Node(val)
+
+        if index_val == count:
+            #self.insertatbeg(val)
+            new_node.next = self.head
+            self.head = new_node
+            return
+        else:
+            count += 1
+            current = self.head
+            while(current.next):
+                if count == index_val:
+                    new_node.next = current
+                    current = new_node
+                    return
+
+
+
+    def display_all(self):
+        # if self.head is None:
+        #     print("Linked list is empth")
+        # else:
+        #     while self.head.next:
+        #         print(self.head.data)
+        #         self.head = self.head.next
+        current_node = self.head
+        while(current_node):
+            print(current_node.data)
+            current_node = current_node.next
+        
+
+
+if __name__ == '__main__':
+    l = LinkedList()
+    l.insertatbeg(3) 
+    l.insertatbeg(2) 
+    l.insertatbeg(1)
+    l.insert_at_index(99,2)
+    l.insert_at_end("Mahavir")
+   
+    l.display_all()
