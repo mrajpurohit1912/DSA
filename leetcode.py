@@ -397,22 +397,26 @@
 
 ######################################################################################
 # 39. Combination Sum
-from typing import List
+# from typing import List
 
-class Solution:
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        main_lst = []
-        sum_lst = []
-        for i in candidates:
-            sum_lst.append(i)
-            if sum(sum_lst) == target:
-                main_lst.append(sum_lst)
-                sum_lst = []
-        return main_lst
+# class Solution:
+#     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+#         main_lst = []
+#         sum_lst = []
+#         for i in candidates:
+#             sum_lst.append(i)
+#             if sum(sum_lst) == target:
+#                 main_lst.append(sum_lst)
+#                 sum_lst = []
+#         return main_lst
 
-if __name__ == '__main__':
-    candidates = [2,3,6,7]
-    target = 7
-    sl = Solution()
-    ans = sl.combinationSum(candidates,target)
-    print(ans)
+# if __name__ == '__main__':
+#     candidates = [2,3,6,7]
+#     target = 7
+#     sl = Solution()
+#     ans = sl.combinationSum(candidates,target)
+#     print(ans)
+
+######################################################################################
+# 307. Range Sum Query - Mutable
+
