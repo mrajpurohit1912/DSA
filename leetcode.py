@@ -396,41 +396,23 @@
 #     result = result.next
 
 ######################################################################################
-
-# 88. Merge Sorted Array
+# 39. Combination Sum
 from typing import List
 
 class Solution:
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        """
-        Do not return anything, modify nums1 in-place instead.
-        # """
-        # nums1.extend(nums2)
-        # while 0 in nums1:
-        #     nums1.remove(0)
-        # nums1 = sorted(nums1)
-        
-        # if m > n:
-        #     for i in nums2:
-        #         nums1.append(nums2.remove(i))
-        #         return nums1
-        # else:
-        #     for i in nums1:
-        #         nums2.append(nums1.remove(i))
-        #         return nums2
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        main_lst = []
+        sum_lst = []
+        for i in candidates:
+            sum_lst.append(i)
+            if sum(sum_lst) == target:
+                main_lst.append(sum_lst)
+                sum_lst = []
+        return main_lst
 
-        while nums1 or nums2:
-            print()
-
-
-            
-
-
-nums1 = [1,2,3,0,0,0]
-m = 6
-nums2 = [2,5,6]
-n = 3
-
-sl = Solution()
-ans = sl.merge(nums1,m,nums2,n)
-print(ans)
+if __name__ == '__main__':
+    candidates = [2,3,6,7]
+    target = 7
+    sl = Solution()
+    ans = sl.combinationSum(candidates,target)
+    print(ans)

@@ -1,5 +1,5 @@
-import pandas as pd
-import numpy as np
+# import pandas as pd
+# import numpy as np
 
 # # Create DataFrame df
 # data = {
@@ -91,16 +91,55 @@ import numpy as np
 # ans = recSum()
 # print(ans)
 
-from typing import List
+# from typing import List
 
-def arrSum(lst: List[int],n:int) -> int:
-    if n <= 0:
-        return 0
-    else:
-        return arrSum(lst,n-1) + lst[n-1]
+# def arrSum(lst: List[int],n:int) -> int:
+#     if n <= 0:
+#         return 0
+#     else:
+#         return arrSum(lst,n-1) + lst[n-1]
 
 
-arr = [1, 2, 3, 4, 5] 
-n = len(arr)
-ans = arrSum(arr,n)
-print(ans)
+# arr = [1, 2, 3, 4, 5] 
+# n = len(arr)
+# ans = arrSum(arr,n)
+# print(ans)
+
+# lst = [1,2,3,4,5,6,7,8,9]
+
+
+
+# result = 
+# for i in range(1,5+1):
+#     print(i)
+
+
+
+
+
+# def factorial_loop(n):
+#     result = 1
+#     for i in range(2, n + 1):
+#         result *= i
+#     return result
+
+# print(factorial_loop(5))  # Output: 120
+
+# def fact1(n):
+#     result = 1
+
+#     for i in range(2,n+1):
+#         result *= i
+    
+#     return result
+
+# print(fact1(5))
+
+
+# def fact2(n):
+#     if n == 0:
+#         return 1
+#     else: 
+#         return n * fact2(n-1)
+    
+# print(fact2(3))
