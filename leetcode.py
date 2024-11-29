@@ -418,5 +418,195 @@
 #     print(ans)
 
 ######################################################################################
-# 307. Range Sum Query - Mutable
+# 24. Swap Nodes in Pairs
+# from typing import Optional
 
+# # Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+# class Solution:
+#     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+#         # Create a dummy node which acts as the pre-head of the list
+#         dummy = ListNode(0)
+#         dummy.next = head
+#         prev_node = dummy
+
+#         # Traverse the list in pairs
+#         while head and head.next:
+#                 # Identify the nodes to be swapped
+#                 first_node = head
+#                 second_node = head.next
+
+#                 # Swapping the nodes
+#                 prev_node.next = second_node
+#                 first_node.next = second_node.next
+#                 second_node.next = first_node
+
+#                 # Move the pointers forward for the next pair
+#                 prev_node = first_node
+#                 head = first_node.next
+
+#         # The new head of the list is the next node of dummy
+#         return dummy.next
+                        
+                
+
+# def create_linked_list(vals):
+#     if not vals:
+#         return None
+#     head = ListNode(vals[0])
+#     current = head
+#     for val in vals[1:]:
+#         current.next = ListNode(val)
+#         current = current.next
+#     return head
+
+# sl = Solution()
+# head = [1,2,3,4]
+# print(sl.swapPairs(head))
+
+#############################################################################################
+
+# class Solution:
+#     def lengthOfLongestSubstring(self, s: str) -> int:
+#         lst = []
+#         lst1 = []
+
+#         while len(s) != 0:
+#             for i in s:
+#                 if i in lst:
+#                     lst1.append(lst)
+#                     lst = []
+#                     idx = s.index(i)
+#                     s = s[idx:]
+#                     #break
+#                 elif not i in lst:
+#                     lst.append(i)
+
+
+#         #return len(max(lst1))
+#         return lst1
+    
+
+# s = "pwwkew"
+# sl = Solution()
+# print(sl.lengthOfLongestSubstring(s))
+
+
+# lst = [[1,2,3],[1,2,3,4]]
+
+# print(len(max(lst)))
+
+
+# def my_func(s: str) -> int:
+#     lst = []
+#     lst1 = []
+#     for i in s:
+#         if i in lst:
+#             lst1.append(lst)
+#             lst = []
+#             s = s[i:]
+#             break
+#         elif not i in lst:
+#             lst.append(i)
+
+
+#     return len(max(lst1))
+
+# s = "ABCDE"
+# start = 0
+# end = len(s)
+
+# while start<=end:
+#     print(s[start],start)
+#     start +=1
+
+# Definition for singly-linked list.
+# from typing import Optional
+
+
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+# class Solution:
+#     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+#         current_node = head
+#         while(current_node):
+#             print(current_node)
+
+
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+# class my_class:
+#     def Display(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+#         length = 0
+#         current = head
+#         while current:
+#             current = current.next
+#             length += 1
+
+#         if length == n:
+#             if head.next:
+#                 return head.next
+#             else:
+#                 return None
+        
+#         idx = 1
+
+#         current_node = head
+#         while(idx < length - n):
+#             current_node = current_node.next
+#             idx += 1
+
+#         current_node.next = current_node.next.next
+
+#         return head
+            
+
+# if __name__ == "__main__":
+#     head = ListNode(1)
+#     head.next = ListNode(2)
+#     head.next.next = ListNode(3)
+#     head.next.next.next = ListNode(4)
+#     head.next.next.next.next = ListNode(5)
+
+#     cl = my_class()
+#     print(cl.Display(head=head,n=2))
+
+from typing import List
+
+# class Solution:
+#     def twoSum(self, nums: List[int], target: int) -> List[int]:
+#         for i in range(len(nums) - 1):
+#             if nums[i] +nums[i + 1] == target:
+#                 lst = [i,i+1]
+#                 return lst
+
+# class Solution:
+#     def twoSum(self, nums: List[int], target: int) -> List[int]:
+#         for i in range(len(nums)):
+#             for 
+#             for j in range(i+1)
+
+# nums = [2,7,11,15]
+# target = 9
+# sl = Solution()
+# print(sl.twoSum(nums,target))
+
+# lst = [88,43,455,65,676]
+
+# for i in range(len(lst) - 1):
+#     print(lst[i])
+
+
+lst1 = [101,102,103,104]
+#lst2 = [201,202,203,204]
+
+for i in range(len(lst1)):
+    for j in range(i+1,len(lst1)):
+        print(lst1[i],lst1[j])

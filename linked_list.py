@@ -262,127 +262,192 @@
 
 # l.display()
 #######################################################################################
+# class Node:
+#     def __init__(self,data) -> None:
+#         self.data = data
+#         self.next = None
+
+# class LinkedList:
+#     def __init__(self) -> None:
+#         self.head = None
+    
+#     def insert_at_beg(self,data):
+#         new_node = Node(data)
+#         if not self.head:
+#             self.head = new_node
+#             return
+        
+#         new_node.next = self.head
+#         self.head = new_node
+
+#     def insert_at_end(self,data):
+#         new_node = Node(data)
+
+#         if not self.head:
+#             self.head = new_node
+#             return
+
+#         current_node = self.head
+#         while(current_node.next):
+#             current_node = current_node.next
+#         current_node.next = new_node
+
+#     # def insert_at_index(self,data,index):
+#     #     new_node = Node(data)
+#     #     position = 0
+
+#     #     if index == 0:
+#     #         #self.head = new_node
+#     #         self.insert_at_beg(data)
+#     #         return
+        
+#     #     current_node = self.head
+
+#     #     while(current_node != None and position+1 != index):
+#     #         position = position+1
+#     #         current_node = current_node.next 
+
+#     #     if current_node != None:
+#     #         # current_node.next.next = current_node.next
+#     #         # current_node.next = new_node
+#     #         new_node.next = current_node.next
+#     #         current_node.next = new_node
+#     #     else:
+#     #         print("Index Not found !")
+#     def insertAtIndex(self, data, index):
+#         if (index == 0):
+#             self.insert_at_beg(data)
+            
+#         position = 0
+#         current_node = self.head
+#         while (current_node != None and position+1 != index):
+#             position = position+1
+#             current_node = current_node.next
+
+#         if current_node != None:
+#             new_node = Node(data)
+#             new_node.next = current_node.next
+#             current_node.next = new_node
+#         else:
+#             print("Index not present")
+
+
+#     def display(self):
+#         if not self.head:
+#             return
+#         current_node = self.head
+
+#         while(current_node):
+#             print(current_node.data)
+#             current_node = current_node.next
+
+ 
+
+#     def size_of_linked_list(self):
+#         count = 0
+#         if not self.head:
+#             return count
+        
+#         current_node = self.head
+#         while(current_node.next):
+#             current_node = current_node.next
+#             count += 1
+#         print("Count is ",count) 
+
+#     def update_node(self,data,index):
+#         #new_node = Node(data)
+#         if index == 0:
+#             #new_node.next = self.head.next
+#             self.head.data = data 
+#             return
+        
+#         position = 0
+#         current_node = self.head
+#         while(current_node != None and position+1 != index):
+#             position += 1
+#             current_node = current_node.next
+
+#         if current_node != None:
+#             current_node.data = data
+#         else:
+#             print("Index is not present")
+
+# l = LinkedList()
+# #l.insertAtIndex(99,1)
+# l.insert_at_beg(3)            
+# l.insert_at_beg(2)            
+# l.insert_at_beg(1)            
+# l.insert_at_end(4)
+# l.insert_at_end(99)
+# l.insert_at_end(5)
+# l.update_node(6,7)
+
+# #l.size_of_linked_list()                               
+# l.display()
+        
+        
 class Node:
-    def __init__(self,data) -> None:
-        self.data = data
+    def __init__(self,val):
+        self.data = val
         self.next = None
 
 class LinkedList:
     def __init__(self) -> None:
         self.head = None
     
-    def insert_at_beg(self,data):
+    def insertatbeg(self,data):
         new_node = Node(data)
         if not self.head:
             self.head = new_node
             return
-        
+
         new_node.next = self.head
         self.head = new_node
 
-    def insert_at_end(self,data):
+    def insertatend(self,data):
         new_node = Node(data)
 
         if not self.head:
             self.head = new_node
             return
-
+        
         current_node = self.head
-        while(current_node.next):
+        while current_node.next:
             current_node = current_node.next
+
         current_node.next = new_node
 
-    # def insert_at_index(self,data,index):
-    #     new_node = Node(data)
-    #     position = 0
-
-    #     if index == 0:
-    #         #self.head = new_node
-    #         self.insert_at_beg(data)
-    #         return
-        
-    #     current_node = self.head
-
-    #     while(current_node != None and position+1 != index):
-    #         position = position+1
-    #         current_node = current_node.next 
-
-    #     if current_node != None:
-    #         # current_node.next.next = current_node.next
-    #         # current_node.next = new_node
-    #         new_node.next = current_node.next
-    #         current_node.next = new_node
-    #     else:
-    #         print("Index Not found !")
-    def insertAtIndex(self, data, index):
-        if (index == 0):
-            self.insert_at_beg(data)
-            
-        position = 0
-        current_node = self.head
-        while (current_node != None and position+1 != index):
-            position = position+1
-            current_node = current_node.next
-
-        if current_node != None:
-            new_node = Node(data)
-            new_node.next = current_node.next
-            current_node.next = new_node
-        else:
-            print("Index not present")
-
-
     def display(self):
-        if not self.head:
-            return
         current_node = self.head
-
-        while(current_node):
+        while current_node:
             print(current_node.data)
             current_node = current_node.next
 
- 
+    def size_of_list(self):
+        size_pointer = 0
 
-    def size_of_linked_list(self):
-        count = 0
         if not self.head:
-            return count
-        
-        current_node = self.head
-        while(current_node.next):
-            current_node = current_node.next
-            count += 1
-        print("Count is ",count) 
+            return size_pointer
 
-    def update_node(self,data,index):
-        #new_node = Node(data)
-        if index == 0:
-            #new_node.next = self.head.next
-            self.head.data = data 
+        current_node = self.head
+        while current_node:
+            size_pointer += 1
+            current_node = current_node.next
+
+    def remove_first_node(self):
+
+        if not self.head:
             return
-        
-        position = 0
+
+        self.head = self.head.next
+
+    def remove_last_nose(self):
+
+        if not self.head:
+            return
+
         current_node = self.head
-        while(current_node != None and position+1 != index):
-            position += 1
-            current_node = current_node.next
+        while current_node.next.next != None:
+            current_node  = current_node.next
 
-        if current_node != None:
-            current_node.data = data
-        else:
-            print("Index is not present")
-
-l = LinkedList()
-#l.insertAtIndex(99,1)
-l.insert_at_beg(3)            
-l.insert_at_beg(2)            
-l.insert_at_beg(1)            
-l.insert_at_end(4)
-l.insert_at_end(99)
-l.insert_at_end(5)
-l.update_node(6,7)
-
-#l.size_of_linked_list()                               
-l.display()
-        
-        
+        current_node.next = None        
