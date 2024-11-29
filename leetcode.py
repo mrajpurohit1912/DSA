@@ -578,7 +578,7 @@
 #     cl = my_class()
 #     print(cl.Display(head=head,n=2))
 
-from typing import List
+# from typing import List
 
 # class Solution:
 #     def twoSum(self, nums: List[int], target: int) -> List[int]:
@@ -603,10 +603,29 @@ from typing import List
 # for i in range(len(lst) - 1):
 #     print(lst[i])
 
+from typing import List
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0:
+            return False 
+        new_number = 0
+        old_x = x
+        while x != 0:
+            new_digit = x % 10
+            new_number = new_number * 10  + new_digit
+            x = x // 10
+        return new_number == old_x
+x = -121
+sl = Solution()
+print(sl.isPalindrome(x))
 
-lst1 = [101,102,103,104]
-#lst2 = [201,202,203,204]
+# x = 123
 
-for i in range(len(lst1)):
-    for j in range(i+1,len(lst1)):
-        print(lst1[i],lst1[j])
+# new_number = 0
+# while x:
+#     new_digit = x % 10
+#     new_number = (new_number * 10) + new_digit
+#     x = x // 10
+
+# print(new_number)
+# print(x)
